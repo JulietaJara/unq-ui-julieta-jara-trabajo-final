@@ -1,8 +1,9 @@
 import React from "react";
+import "./ButtonReset.css"; 
 
 const ResetButton = ({ onClick }) => {
     return (
-        <button onClick={onClick}>Volver a jugar</button>
+        <button className="reset" onClick={onClick}>Volver a jugar</button>
     );
 };
 

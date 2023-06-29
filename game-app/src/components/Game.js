@@ -1,4 +1,5 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.css';
 import options from "../data/options";
 import useChoice from "../useChoice/useChoices";
 import GameResult from "./GameResult";
