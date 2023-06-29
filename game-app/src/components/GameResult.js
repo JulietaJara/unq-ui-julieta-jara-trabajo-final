@@ -1,15 +1,13 @@
 import React from "react";
 
 const GameResult = ({ result }) => {
-  if (result === 0) {
-    return <div>Empate</div>;
-  } else if (result === 1) {
-    return <div>Has ganado esta partida!</div>;
-  } else if (result === 2) {
-    return <div>Has perdido esta partida</div>;
-  } else {
-    return null;
-  }
+    const resultMessages = {
+        0: "Empate",
+        1: "Has ganado esta partida!",
+        2: "Has perdido esta partida"
+    };
+
+    return <div>{resultMessages[result] || null}</div>;
 };
 
 export default GameResult;
