@@ -14,6 +14,8 @@ const Game = () => {
     const [computerChoice, setComputerChoice] = useState(null);
     const [result, setResult] = useState(null);
     const [disabled, setDisabled] = useState(false);
+    const [playerMessage, setPlayerMenssage] = useState(null);
+    const [computerMessage, setComputerMenssage] = useState(null);
 
     const getResult = (playerChoice, computerChoice) => {
         if(playerChoice === computerChoice){
@@ -42,6 +44,30 @@ const Game = () => {
 
     }
 
+    const volverAJugar = () => {
+        setPlayerChoice(null)
+        setComputerChoice(null)
+        setResult(null)
+        setDisabled(false)
+        setPlayerMenssage(null)
+        setComputerMenssage(null)
+    }
+
+    useEffect(() => {
+        if(playerChoice != null){
+            setPlayerMenssage(
+                `Elegiste ${options[playerChoice]?.imagen} - ${options[playerChoice]?.name}`
+            );
+        }
+    }, [playerChoice]);
+
+    useEffect(() => {
+        if(computerChoice != null){
+            setComputerMenssage(
+                `La computadora ha elegido ${options[computerChoice]?.imagen} - ${options[computerChoice]?.name}`            );
+        }
+    }, [computerChoice]);
+
     return (
         <div>
         <div> ¡Piedra, Papel, Tijera, Lagarto o Spock! </div>
@@ -51,7 +77,25 @@ const Game = () => {
                     <img src={option.imagen} alt={option.name} />
                     </button> 
             ))}
+
+        {playerChoice != null &&
+        <div>{playerMessage}  </div>
+        }
+
+        {result != null && (
+            <div> 
+            {result === 0 && <div> Empate </div>}
+            {result === 1 && <div> Has ganado esta partida! </div>}
+            {result === 2 && <div> Has perdido esta partida </div>}
+            </div>
+        )}
+        
+        {computerChoice != null &&
+        <div>{computerMessage}  </div>
+        }
         </div>
+
+        <button onClick={volverAJugar}> Volver a jugar</button>
         </div>
     )
 }
