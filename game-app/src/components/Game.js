@@ -1,5 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import './Game.css'; 
 import options from "../data/options";
 import useChoice from "../useChoice/useChoices";
 import GameResult from "./GameResult";
@@ -10,9 +11,10 @@ const Game = () => {
     const { playerChoice, computerChoice, playerMessage, computerMessage, result, disabled, handlePlay, volverAJugar } = useChoice()
 
     return (
-        <div>
+        <div className="container-juego" >
+            <div className="styles">
             <div> ¡Piedra, Papel, Tijera, Lagarto o Spock! </div>
-            <div>
+            <div className="button-container">
                 {options.map((option) => (
                     <ButtonOptions
                         key={option.id}
@@ -28,6 +30,7 @@ const Game = () => {
             {computerChoice != null && <div>{computerMessage}  </div>}
 
             <ButtonReset onClick={volverAJugar} />
+            </div>
         </div>
     )
 }
