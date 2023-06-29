@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import options from "../data/options";
 import getResult from "../data/result";
 
-function useChoices() {
+const useChoice = () => {
     const [playerChoice, setPlayerChoice] = useState(null);
     const [computerChoice, setComputerChoice] = useState(null);
     const [result, setResult] = useState(null);
@@ -56,4 +56,4 @@ function useChoices() {
     }
 }
 
-export default useChoices
+export default useChoice
