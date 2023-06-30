@@ -17,7 +17,7 @@ const useChoice = () => {
 
         setTimeout(() => {
             setComputerChoice(randomChoice)
-        }, 1000);
+        }, 600);
 
         setTimeout(() => {
             setResult(getResult(choice, randomChoice))
