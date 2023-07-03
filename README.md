@@ -8,6 +8,10 @@
 
 2. Luego, en la terminal instalar npm install.
 
+<p style="float: left;">
+  <img src="game-app/src/images/readme4.png" />
+</p>
+
 3. A continuación, ejecutar el comando npm start.
 
 <p style="float: left;">
