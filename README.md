@@ -1,6 +1,6 @@
 # Trabajo Final Integrador (TFI) 
 <p align="center">
-  <img src="" />
+  <img src="images/readme1" />
 </p>
 
 1. En principio, dirgirse a la carpeta game-app.
