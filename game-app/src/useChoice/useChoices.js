@@ -9,6 +9,8 @@ const useChoice = () => {
     const [disabled, setDisabled] = useState(false);
     const [playerMessage, setPlayerMenssage] = useState(null);
     const [computerMessage, setComputerMenssage] = useState(null);
+    const [partidaTerminada, setPartidaTerminada] = useState(false);
+    const [mostrarBoton, setMostrarBoton] = useState(false);
 
     const handlePlay = (choice) => {
         setPlayerChoice(choice)
@@ -22,7 +24,7 @@ const useChoice = () => {
         setTimeout(() => {
             setResult(getResult(choice, randomChoice))
         }, 500)
-
+        setPartidaTerminada(true)
         clearTimeout()
 
     }
@@ -42,6 +44,14 @@ const useChoice = () => {
         }
     }, [computerChoice]);
 
+    useEffect(() => {
+        if (partidaTerminada) {
+          setTimeout(() => {
+            setMostrarBoton(true);
+          }, 600); 
+        }
+      }, [partidaTerminada]);
+
     const volverAJugar = () => {
         setPlayerChoice(null)
         setComputerChoice(null)
@@ -49,10 +59,12 @@ const useChoice = () => {
         setDisabled(false)
         setPlayerMenssage(null)
         setComputerMenssage(null)
+        setPartidaTerminada(false)
+        setMostrarBoton(false)
     }
 
     return{
-        playerChoice, computerChoice, result, disabled, playerMessage, computerMessage, handlePlay, volverAJugar
+        playerChoice, computerChoice, result, disabled, playerMessage, computerMessage, partidaTerminada, mostrarBoton, handlePlay, volverAJugar
     }
 }
 

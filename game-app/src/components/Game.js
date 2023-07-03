@@ -8,7 +8,7 @@ import ButtonOptions from "../atoms/ButtonOptions";
 import ButtonReset from "../atoms/ButtonReset";
 
 const Game = () => {
-    const { playerChoice, computerChoice, playerMessage, computerMessage, result, disabled, handlePlay, volverAJugar } = useChoice()
+    const { playerChoice, computerChoice, playerMessage, computerMessage, result, disabled, mostrarBoton, handlePlay, volverAJugar } = useChoice()
 
     return (
         <div className="container-juego" >
@@ -30,7 +30,7 @@ const Game = () => {
                 {result != null && <GameResult result={result} />}
                 {computerChoice != null && <div>{computerMessage}  </div>}
 
-                <ButtonReset onClick={volverAJugar} />
+                {mostrarBoton && <ButtonReset onClick={volverAJugar} />}
             </div>
         </div>
     )
