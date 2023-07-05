@@ -11,11 +11,12 @@ const useChoice = () => {
     const [computerMessage, setComputerMenssage] = useState(null);
     const [partidaTerminada, setPartidaTerminada] = useState(false);
     const [mostrarBoton, setMostrarBoton] = useState(false);
+    const [victorias, setVictorias] = useState(0);
 
     const handlePlay = (choice) => {
         setPlayerChoice(choice)
         setDisabled(true)
-        const randomChoice = Math.floor(Math.random()* 5);
+        const randomChoice = Math.floor(Math.random() * 5);
 
         setTimeout(() => {
             setComputerChoice(randomChoice)
@@ -24,13 +25,20 @@ const useChoice = () => {
         setTimeout(() => {
             setResult(getResult(choice, randomChoice))
         }, 500)
+
         setPartidaTerminada(true)
         clearTimeout()
 
     }
 
     useEffect(() => {
-        if(playerChoice != null){
+        if (result === 1) {
+            setVictorias((previoVictorias) => previoVictorias + 1);
+        }
+    }, [result]);
+
+    useEffect(() => {
+        if (playerChoice != null) {
             setPlayerMenssage(
                 `Has elegido ${options[playerChoice]?.name}!`
             );
@@ -38,19 +46,19 @@ const useChoice = () => {
     }, [playerChoice]);
 
     useEffect(() => {
-        if(computerChoice != null){
+        if (computerChoice != null) {
             setComputerMenssage(
-                `La computadora ha elegido ${options[computerChoice]?.name}`            );
+                `La computadora ha elegido ${options[computerChoice]?.name}`);
         }
     }, [computerChoice]);
 
     useEffect(() => {
         if (partidaTerminada) {
-          setTimeout(() => {
-            setMostrarBoton(true);
-          }, 600); 
+            setTimeout(() => {
+                setMostrarBoton(true);
+            }, 600);
         }
-      }, [partidaTerminada]);
+    }, [partidaTerminada]);
 
     const volverAJugar = () => {
         setPlayerChoice(null)
@@ -63,8 +71,8 @@ const useChoice = () => {
         setMostrarBoton(false)
     }
 
-    return{
-        playerChoice, computerChoice, result, disabled, playerMessage, computerMessage, partidaTerminada, mostrarBoton, handlePlay, volverAJugar
+    return {
+        playerChoice, computerChoice, result, disabled, playerMessage, computerMessage, partidaTerminada, mostrarBoton, victorias, handlePlay, volverAJugar
     }
 }
 

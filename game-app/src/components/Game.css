@@ -21,15 +21,30 @@
     justify-content: center;
 }
 
-.comencemos{
+.comencemos {
     font-weight: bold;
 }
 
-.title-juego{
+.title-juego {
     font-weight: bold;
     font-size: 24px;
     position: absolute;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.contador-victorias {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 20px;
+    margin-top: 6px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.icono-victorias {
+    width: 18px;
+    height: 18px;
 }
