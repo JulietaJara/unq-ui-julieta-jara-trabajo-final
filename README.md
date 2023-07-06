@@ -18,7 +18,7 @@
   <img src="game-app/src/images/readme2.png" />
 </p>
 
-4. Finalmente, se abrirá en el navegador ¡Piedra, Papel, Tijera, Lagarto o Spock!
+- Finalmente, se abrirá en el navegador ¡Piedra, Papel, Tijera, Lagarto o Spock!
 
 <p style="float: left;">
   <img src="game-app/src/images/readme3.png" width="300" />
