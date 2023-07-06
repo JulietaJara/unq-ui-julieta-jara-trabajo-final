@@ -1,18 +1,18 @@
 # Trabajo Final Integrador (TFI) 
 
-1. En principio, dirigirse a la carpeta game-app.
+- En principio, dirigirse a la carpeta game-app.
 
 <p style="float: left;">
   <img src="game-app/src/images/readme1.png" />
 </p>
 
-2. Luego, en la terminal instalar npm install.
+- Luego, en la terminal instalar npm install.
 
 <p style="float: left;">
   <img src="game-app/src/images/readme4.png" />
 </p>
 
-3. A continuación, ejecutar el comando npm start.
+- A continuación, ejecutar el comando npm start.
 
 <p style="float: left;">
   <img src="game-app/src/images/readme2.png" />
