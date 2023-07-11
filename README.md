@@ -6,7 +6,7 @@
   <img src="game-app/src/images/readme1.png" />
 </p>
 
-- Luego, en la terminal instalar npm install.
+- Luego, ejecutar el comando npm install en la terminal.
 
 <p style="float: left;">
   <img src="game-app/src/images/readme4.png" />

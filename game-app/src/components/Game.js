@@ -6,6 +6,7 @@ import useChoice from "../useChoice/useChoices";
 import GameResult from "./GameResult";
 import ButtonOptions from "../atoms/ButtonOptions";
 import ButtonReset from "../atoms/ButtonReset";
+import troply from '../images/trophy.png'
 
 const Game = () => {
     const { playerChoice, computerChoice, playerMessage, computerMessage, result, disabled, mostrarBoton, victorias, handlePlay, volverAJugar } = useChoice()
@@ -33,7 +34,7 @@ const Game = () => {
                 {mostrarBoton && <ButtonReset onClick={volverAJugar} />}
 
                 <div className="contador-victorias">
-                    <img src="https://img.icons8.com/material-sharp/24/c74343/trophy.png" alt="Icono de victorias" className="icono-victorias" />
+                    <img src={troply} alt="Icono de victorias" className="icono-victorias" />
                     {victorias}
                 </div>
             </div>
