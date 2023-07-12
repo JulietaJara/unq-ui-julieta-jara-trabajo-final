@@ -6,9 +6,9 @@ import './GameResult.css';
 
 const GameResult = ({ result }) => {
     const resultMessages = {
-        0: <div><strong>Empate</strong><img src= {empate} alt="Imagen de igualdad" className="tamaño-igual" /></div>,
-        1: <div><strong>Has ganado esta partida!</strong><img src= {caritaFeliz} alt="Imagen de ganador" className="tamaño-carita" /></div>,
-        2: <div><strong>Has perdido esta partida</strong><img src= {caritaTriste} alt="Imagen de perdedor" className="tamaño-carita" /></div>
+        0: <div className="result">Empate<img src= {empate} alt="Imagen de igual" className="tamaño-igual" /></div>,
+        1: <div className="result">Has ganado esta partida!<img src= {caritaFeliz} alt="Imagen de ganador" className="tamaño-carita" /></div>,
+        2: <div className="result">Has perdido esta partida<img src= {caritaTriste} alt="Imagen de perdedor" className="tamaño-carita" /></div>
     };
 
     return <div>{resultMessages[result] || null}</div>;
